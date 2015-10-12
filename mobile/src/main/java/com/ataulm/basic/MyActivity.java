@@ -21,6 +21,8 @@ public class MyActivity extends Activity {
 
         master = (RecyclerView) findViewById(R.id.master);
         master.setLayoutManager(new LinearLayoutManager(this));
+        master.addItemDecoration(new DividerItemDecoration(this, null));
+
         adapter = new AlphabetAdapter(new OnActivatedListener() {
             @Override
             public void onActivated(int position) {
@@ -28,6 +30,7 @@ public class MyActivity extends Activity {
                 detail.setText(Alphabet.values()[position].description());
             }
         });
+
         master.setAdapter(adapter);
 
         detail = (TextView) findViewById(R.id.detail);
@@ -43,7 +46,8 @@ public class MyActivity extends Activity {
 
         private final OnActivatedListener listener;
 
-        private int positionActivated;
+        //-1 to not show anything selected
+        private int positionActivated = -1;
 
         AlphabetAdapter(OnActivatedListener listener) {
             this.listener = listener;

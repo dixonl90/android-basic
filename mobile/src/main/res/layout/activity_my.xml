@@ -2,15 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="horizontal">
+  android:orientation="horizontal"
+    android:background="@color/alphabet_background_default">
 
   <android.support.v7.widget.RecyclerView
     android:id="@+id/master"
     android:layout_width="0dp"
     android:layout_height="match_parent"
     android:layout_weight="30"
-    android:descendantFocusability="afterDescendants"
-    android:background="@android:color/black" />
+    android:descendantFocusability="afterDescendants"/>
 
   <TextView
     android:id="@+id/detail"
